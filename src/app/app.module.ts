@@ -3,7 +3,12 @@ import { BrowserModule }  from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { IntroComponent } from './components/intro.component';
-import { MenuComponent } from './components/menubar.component';
+import { ProjectComponent } from './components/projects.component';
+import { SkillComponent } from './components/skills.component';
+import { ExperienceComponent } from './components/experience.component';
+import { EducationComponent } from './components/education.component';
+import { DesignComponent } from './components/design.component';
+import { ContactComponent } from './components/contact.component';
 
 @NgModule({
   imports: [
@@ -12,7 +17,12 @@ import { MenuComponent } from './components/menubar.component';
   declarations: [
     AppComponent,
     IntroComponent,
-    MenuComponent
+    ProjectComponent,
+    SkillComponent,
+    ExperienceComponent,
+    EducationComponent,
+    DesignComponent,
+    ContactComponent
   ],
   bootstrap: [ AppComponent ]
 })

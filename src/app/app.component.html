@@ -1,6 +1,28 @@
 <div class="page-header"></div>
 <div class="container-fluid">
-  <menubar></menubar>
-  <intro></intro>
-  <!-- <content></content> -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="javascript:void(0)" (click)="changeTab(0)">Home</a>
+        <li><a href="javascript:void(0)" (click)="changeTab(1)">Projects</a>
+        <li><a href="javascript:void(0)" (click)="changeTab(2)">Skills</a></li>
+        <li><a href="javascript:void(0)" (click)="changeTab(3)">Experience</a></li>
+        <li><a href="javascript:void(0)" (click)="changeTab(4)">Education</a></li>
+        <li><a href="javascript:void(0)" (click)="changeTab(5)">Design</a></li>
+        <li><a href="javascript:void(0)"> | </a></li>
+        <li><a href="{{resume_pdf}}" target="_blank">Resume <span class="glyphicon glyphicon-new-window"></span></a></li>
+        <li><a href="http://www.ajaxisme.wordpress.com" target="_blank">Blog <span class="glyphicon glyphicon-new-window"></span></a></li>
+        <li><a href="{{portfolio_pdf}}" target="_blank">Portfolio <span class="glyphicon glyphicon-new-window"></span></a></li>
+        <li><a href="javascript:void(0)"> | </a></li>
+        <li><a href="javascript:void(0)" (click)="changeTab(6)">Contact <span class="glyphicon glyphicon-envelope"></span></a></li>
+      </ul>
+    </div>
+  </nav>
+  <intro *ngIf="current_tab=='intro'"></intro>
+  <projects *ngIf="current_tab=='projects'"></projects>
+  <skills *ngIf="current_tab=='skills'"></skills>
+  <experience *ngIf="current_tab=='experience'"></experience>
+  <education *ngIf="current_tab=='education'"></education>
+  <design *ngIf="current_tab=='design'"></design>
+  <contact *ngIf="current_tab=='contact'"></contact>
 </div>
