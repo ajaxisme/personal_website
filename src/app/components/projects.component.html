@@ -1,17 +1,29 @@
-<div class="jumbotron container">
-  <h2 class="text-center">PROJECTS</h2>
-  <hr />
-  <div class="panel-group" *ngFor="let project of projects" id="accordion">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#{{project.title}}">{{project.title}}</a>
-        </h4>
-      </div>
-      <div id="{{project.title}}" class="panel-collapse collapse">
-        <div class="panel-body">
-          {{ project.description}}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 index">
+      <h3 class="text-center">Projects</h3>
+      <hr />
+      <div class="project-section">
+        <div *ngFor="let project of projects;let i=index" class="list-group">
+          <a href="javascript:void(0)" *ngIf="project.title===current_project.title" class="list-group-item list-group-item-action active">{{project.title}}</a>
+          <a href="javascript:void(0)" (click)="changeCurrentProject(i)" *ngIf="project.title!==current_project.title" class="list-group-item list-group-item-action">{{project.title}}</a>
         </div>
+      </div>
+    </div>
+    <div class="col-md-9 content">
+      <h3 class="text-center">Description</h3>
+      <hr />
+      <div class="container-fluid">
+        <h1>{{current_project.title}}</h1>
+        <hr />
+        <p>{{current_project.description}}</p>
+        <h2><strong>Technologies</strong></h2>
+        <ul class="list-inline">
+          <li *ngFor="let tech of current_project.technology" class="list-inline-item"><button class="btn btn-lg btn-warning">{{tech}}</button></li>
+        </ul>
+        <h2><strong>Project Link</strong></h2>
+        <a href="{{current_project.github_link}}" target="_blank">{{ current_project.github_link}}</a>
+        <div></div>
       </div>
     </div>
   </div>

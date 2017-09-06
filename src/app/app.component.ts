@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor() {
     this.tabs = ["intro", "projects", "skills", "experience", "education", "design", "contact"];
-    this.current_tab = this.tabs[0];
+    this.current_tab = this.tabs[1];
   }
 
   changeTab(tab: number) {

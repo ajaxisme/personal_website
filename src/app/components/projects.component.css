@@ -1,0 +1,15 @@
+.container-fluid {
+  background-color: white;
+  opacity: 0.8;
+}
+
+p, a {
+  font-size: 20px;
+}
+
+/*.project-section {
+  max-height: 800px;
+  scroll-behavior: auto;
+  overflow-y: scroll;
+  border-width: thick;
+}*/
